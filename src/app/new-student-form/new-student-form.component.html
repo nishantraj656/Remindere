@@ -1,0 +1,22 @@
+<p></p>
+<div>
+    <h3>Please Enter Your Information</h3>
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+      <mat-form-field >
+        <input matInput placeholder="First Name" id="firstName" [(ngModel)]=" firstName" name="firstname" >
+      </mat-form-field>
+      <br>
+      <mat-form-field >
+        <input matInput placeholder="Last Name" id="lastName" [(ngModel)]=" lastName" name="lastname" >
+      </mat-form-field>
+      <br>
+      <mat-form-field >
+        <input matInput placeholder="Age" id="age" [(ngModel)]=" age" name="age" >
+      </mat-form-field>     
+    
+      <p>
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+      </p>
+    </form>
+</div>
+    

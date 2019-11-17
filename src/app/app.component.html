@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<mat-card>
+  <mat-card-title>
+    Group Project Group6 - Time to Eat App
+  </mat-card-title>
+  <mat-card-content>
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">
+      Open Menu
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="subMenu1">
+        <mat-icon>Reminder</mat-icon>
+        <mat-menu #subMenu1="matMenu">
+          <button mat-menu-item>Create</button>
+          <button mat-menu-item>Remove</button>
+        </mat-menu>
+      </button> 
+      <button mat-menu-item [matMenuTriggerFor]="subMenu2">
+        <mat-icon>Notification</mat-icon>
+        <mat-menu #subMenu2="matMenu">
+          <button mat-menu-item>On</button>
+          <button mat-menu-item>Off</button>
+    
+      </mat-menu>
+      </button> 
+      <button mat-menu-item >
+        <mat-icon>Email Remider</mat-icon>
+        <mat-menu #subMenu3="matMenu">
+          <button mat-menu-item>On</button>
+          <button mat-menu-item>Off</button>
+         
+      </mat-menu>
+      </button>
+    </mat-menu>
+
+  </mat-card-content>
+</mat-card>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Watch Your Meals!</h1>
+    <h2></h2>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Welcome</div>
+    <div class="panel-body">
+      <h3>{{title}}</h3>
+    </div>
+    <div class="float-left">
+        <ul *ngFor ="let student of students let i = index">
+          <li> {{student._id}}: {{student.firstName}} {{student.lastName}} </li>
+          <button mat-button color="warn" (click)="onDelete(student._id)">DELETE</button>
+        </ul>
+        <div class="float-left">
+          <app-new-student-form></app-new-student-form>
+        </div>
+         
+    </div>
+    
+  </div>
+</div>
+
+<!-- <div>
+  <h3 style="align-content: center">Welcome to {{title}}!</h3>
+</div> -->
+
+
+
+   <!-- <pre>{{students | json}}</pre> -->
